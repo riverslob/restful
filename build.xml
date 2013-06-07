@@ -23,9 +23,4 @@
 		</jar>
 		<jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}" />	
 	</target>
-	
-	<target name="clean">
-		<delete dir="${buildDir}"/>
-		<delete dir="${distDir}"/>
-	</target>
 </project>
