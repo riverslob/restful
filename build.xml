@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="Project Argon" default="dist">
+	<description>A simple Java Project</description>
+	<property name="srcDir" location="src"/>
+	<property name="buildDir" location="build"/>
+	<property name="distDir" location="dist"/>
+	
+	<target name="init">
+		<tstamp/>	
+		<mkdir dir="${buildDir}" />
+		<mkdir dir="${distDir}" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${srcDir}" destdir="${buildDir}"/>
+	</target>
+	
+	<target name="dist" depends="compile">
+		<jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
+			<manifest>
+				<attribute name="Build-By" value="${user.name}" />
+			</manifest>	
+		</jar>
+		<jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}" />	
+	</target>
+	
+	<target name="clean">
+		<delete dir="${buildDir}"/>
+		<delete dir="${distDir}"/>
+	</target>
+</project>
