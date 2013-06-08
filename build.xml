@@ -4,16 +4,7 @@
 	<property name="srcDir" location="src"/>
 	<property name="buildDir" location="build"/>
 	<property name="distDir" location="dist"/>
-	
-	<target name="init">
-		<tstamp/>	
-		<mkdir dir="${buildDir}" />
-		<mkdir dir="${distDir}" />
-	</target>
-	
-	<target name="compile" depends="init">
-		<javac srcdir="${srcDir}" destdir="${buildDir}"/>
-	</target>
+
 	
 	<target name="dist" depends="compile">
 		<jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
