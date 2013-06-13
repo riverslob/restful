@@ -2,8 +2,7 @@
 <project name="Project Argon" default="dist">
 	<description>A simple Java Project</description>
 	<property name="srcDir" location="src"/>
-	<property name="buildDir" location="build"/>
-	<property name="distDir" location="dist"/>	
+	<property name="buildDir" location="build"/>	
 	
 	<target name="compile" depends="init">
 		<javac srcdir="${srcDir}" destdir="${buildDir}"/>
